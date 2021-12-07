@@ -9,13 +9,21 @@ var getSearch = function (event) {
     event.preventDefault()
     var searchTerm = searchEl.value
     var format = formatEl.value
-  console.log( searchTerm)
+    console.log( searchTerm)
+    var endpoint;
+
+    if(format){
+        endpoint=format +"/";
+    }
+   
 };
 buttonEl.addEventListener('click',getSearch) ;
 
+fetch(apiUrl){
 
+ }
 
 
 
   
-    var apiUrl = ' https://www.loc.gov/'
+    var apiUrl = ' https://www.loc.gov/' + endpoint + searchTerm + 'fo=json';
