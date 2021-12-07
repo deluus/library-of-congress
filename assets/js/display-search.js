@@ -13,17 +13,20 @@ var getSearch = function (event) {
     var endpoint;
 
     if(format){
-        endpoint=format +"/";
+        endpoint='https://www.loc.gov/' + format +"/";
+    } else {
+        endpoint = 'https://www.loc.gov/search/';
     }
+
+    var query = '?q=' + searchTerm + '&fo=json';
+
+    var apiUrl = endpoint + query;
+
+    fetch(apiUrl)
+        .then(function(response) {
+            console.log(response);
+        });
    
 };
+
 buttonEl.addEventListener('click',getSearch) ;
-
-fetch(apiUrl){
-
- }
-
-
-
-  
-    var apiUrl = ' https://www.loc.gov/' + endpoint + searchTerm + 'fo=json';
