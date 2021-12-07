@@ -10,12 +10,12 @@ var getSearch = function (event) {
     var searchTerm = searchEl.value
     var format = formatEl.value
     console.log( searchTerm)
-    var endpoint;
+    var endpoint = 'https://www.loc.gov/';
 
-    if(format){
-        endpoint='https://www.loc.gov/' + format +"/";
+    if (format){
+        endpoint += format +"/";
     } else {
-        endpoint = 'https://www.loc.gov/search/';
+        endpoint += 'search/';
     }
 
     var query = '?q=' + searchTerm + '&fo=json';
@@ -29,4 +29,4 @@ var getSearch = function (event) {
    
 };
 
-buttonEl.addEventListener('click',getSearch) ;
+buttonEl.addEventListener('click', getSearch) ;
